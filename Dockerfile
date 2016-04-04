@@ -5,8 +5,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 	wget \
         curl \
         git \
-	jq 
-	&& curl https://sdk.cloud.google.com | bash
+	jq \
+	python 
+
+RUN curl https://sdk.cloud.google.com | bash
 ENV PATH /root/google-cloud-sdk/bin:$PATH
 
 RUN /root/google-cloud-sdk/bin/gcloud components update kubectl
